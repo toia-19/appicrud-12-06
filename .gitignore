@@ -1,0 +1,2 @@
+# Evitamos subir node_modules a GitHub
+/node_modules

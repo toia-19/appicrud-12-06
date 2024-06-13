@@ -1,0 +1,25 @@
+[
+    {
+        "type": "header",
+        "version": "5.2.1",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "productocrud"
+    },
+    {
+        "type": "table",
+        "name": "producto",
+        "database": "productocrud",
+        "data": [
+            {
+                "idProducto": "1",
+                "nombre": "shampoo",
+                "categoria": "higiene",
+                "cantidad": "5",
+                "precio": "1000"
+            }
+        ]
+    }
+]
