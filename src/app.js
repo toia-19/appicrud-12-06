@@ -159,7 +159,7 @@ app.put('/producto/edit/', (req, res) => {
         msg: `No existe el producto número: ${idProducto}`
     })
     else{
-        res.status(200).json({
+        res.status(202).json({
             ok: true,
             productoActualizado: listaProducto[posProducto]
         })
@@ -173,7 +173,7 @@ app.delete('/producto/delete', (req, res) => {
 
     const posProducto = listaProducto.indexOf((productoEliminado) => productoEliminado.idProducto == idProducto);
 
-    res.status(200).json({
+    res.status(203).json({
         ok: true,
         productoEliminado: listaProducto[posProducto],
         msg: `¡Producto: ${idProducto} eliminado con éxito!`
@@ -191,10 +191,26 @@ app.get('/producto/ordenados', (req, res) => {
         return productoOrdenado.nombre
     });
 
-    res.status(200).json({
+    res.status(204).json({
         ok: true,
         orderProducto: orderProducto
     })
+});
+
+app.get('/producto/filtrados', (req, res) => {
+    const { query } = req;
+    const { listaProducto } = query;
+
+    const productoFiltro = listaProducto.length[productoFiltro];
+
+    for(i = 0; i < listaProducto.length; i++){
+        if(productoFiltro.precio > listaProducto[i]){
+            res.status(205).json({
+                ok: true,
+                msg: `${productoFiltro.nombre} es menor a ${listaProducto[i]}`
+            })
+        }
+    }
 })
 
 // Escuchamos en el puerto 3000
